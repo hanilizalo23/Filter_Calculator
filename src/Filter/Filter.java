@@ -2,23 +2,33 @@ package Filter;
 
 import javax.swing.JOptionPane;
 
+import com.iteso.math.exception.NegativeNumberFoundException;
+
 public abstract class Filter {
 	protected  double  Lv;
 	protected  double  Fc;
 	protected  double  G;
 	protected  double  C;
-	public void putLv() {
-		this.Lv =Double.parseDouble(JOptionPane.showInputDialog("Filter level:"));
+	public void putLv() throws NegativeNumberFoundException{
+		double x=Double.parseDouble(JOptionPane.showInputDialog("Filter level:"));
+		if(x<0) throw new NegativeNumberFoundException(x);
+		this.Lv =x;
 	}
-	public void putCap() {
-		this.C =Double.parseDouble(JOptionPane.showInputDialog("Capacitance:"));
+	public void putCap() throws NegativeNumberFoundException {
+		double x=Double.parseDouble(JOptionPane.showInputDialog("Capacitance:"));;
+		if(x<0) throw new NegativeNumberFoundException(x);
+		this.C =x;
 	}
 	
-	public void putFc() {
-		this.Fc =Double.parseDouble(JOptionPane.showInputDialog("Cut Frecuency:"));
+	public void putFc() throws NegativeNumberFoundException {
+		double x=Double.parseDouble(JOptionPane.showInputDialog("Cut Frecuency:"));
+		if(x<0) throw new NegativeNumberFoundException(x);
+		this.Fc =x;
 	}
-	public void putGain() {
-		this.G =Double.parseDouble(JOptionPane.showInputDialog("Gain:"));
+	public void putGain() throws NegativeNumberFoundException {
+		double x=Double.parseDouble(JOptionPane.showInputDialog("Gain:"));
+		if(x<0) throw new NegativeNumberFoundException(x);
+		this.G =x;
 	}
 
 	public double getLv() {

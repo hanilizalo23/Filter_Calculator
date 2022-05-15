@@ -4,12 +4,14 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import com.iteso.math.exception.NegativeNumberFoundException;
 
-public class AnalogicFilterLv1 extends Filter {
+
+public class AnalogicFilterLv1 extends Filter  {
 	public double R1;
 	public double Rf;
 	public double R;
-	public AnalogicFilterLv1() {
+	public AnalogicFilterLv1() throws NegativeNumberFoundException {
 		super.putLv();
 		super.putGain();
 		super.putFc();;
@@ -50,7 +52,7 @@ public class AnalogicFilterLv1 extends Filter {
 
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NegativeNumberFoundException {
 		Filter LP= new AnalogicFilterLv1();
 		LP.calculusResistances(LP.getFc(),LP.getGain(),LP.getCap());
 		System.out.println(LP);

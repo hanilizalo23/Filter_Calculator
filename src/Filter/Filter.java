@@ -1,5 +1,7 @@
 package Filter;
 
+import java.io.IOException;
+
 import javax.swing.JOptionPane;
 
 import com.iteso.math.exception.NegativeNumberFoundException;
@@ -45,6 +47,6 @@ public abstract class Filter {
 	}
 		
 	public abstract void calculusResistances(double Fc, double G, double Cap);
-
+	public abstract void resulstFile() throws IOException;
 	
 }

@@ -40,7 +40,7 @@ public class AnalogicFilterLv1 extends Filter  {
 	}
 	
 	public void resulstFile() throws IOException {
-	FileWriter fw=new FileWriter("Descargas\\Hola.txt");
+	FileWriter fw=new FileWriter("D:\\MPO\\ITESO\\6_semestre\\POO\\programas\\ProyectoPOO\\results.txt");
 	BufferedWriter br=new BufferedWriter(fw);
 	br.write(toString());
 	br.close();
@@ -52,10 +52,11 @@ public class AnalogicFilterLv1 extends Filter  {
 
 	}
 	
-	public static void main(String[] args) throws NegativeNumberFoundException {
+	public static void main(String[] args) throws NegativeNumberFoundException, IOException {
 		Filter LP= new AnalogicFilterLv1();
 		LP.calculusResistances(LP.getFc(),LP.getGain(),LP.getCap());
 		System.out.println(LP);
+		LP.resulstFile();
 		
 	}
 	

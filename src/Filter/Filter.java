@@ -7,15 +7,9 @@ import javax.swing.JOptionPane;
 import com.iteso.math.exception.NegativeNumberFoundException;
 
 public abstract class Filter {
-	protected  double  Lv;
 	protected  double  Fc;
 	protected  double  G;
 	protected  double  C;
-	public void putLv() throws NegativeNumberFoundException{
-		double x=Double.parseDouble(JOptionPane.showInputDialog("Filter level:"));
-		if(x<0) throw new NegativeNumberFoundException(x);
-		this.Lv =x;
-	}
 	public void putCap() throws NegativeNumberFoundException {
 		double x=Double.parseDouble(JOptionPane.showInputDialog("Capacitance:"));;
 		if(x<0) throw new NegativeNumberFoundException(x);
@@ -31,10 +25,6 @@ public abstract class Filter {
 		double x=Double.parseDouble(JOptionPane.showInputDialog("Gain:"));
 		if(x<0) throw new NegativeNumberFoundException(x);
 		this.G =x;
-	}
-
-	public double getLv() {
-		return Lv;
 	}
 	public double getFc() {
 		return Fc;

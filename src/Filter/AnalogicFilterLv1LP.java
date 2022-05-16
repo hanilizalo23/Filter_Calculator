@@ -7,12 +7,11 @@ import java.io.IOException;
 import com.iteso.math.exception.NegativeNumberFoundException;
 
 
-public class AnalogicFilterLv1 extends Filter  {
+public class AnalogicFilterLv1LP extends Filter  {
 	public double R1;
 	public double Rf;
 	public double R;
-	public AnalogicFilterLv1() throws NegativeNumberFoundException {
-		super.putLv();
+	public AnalogicFilterLv1LP() throws NegativeNumberFoundException {
 		super.putGain();
 		super.putFc();;
 		super.putCap();
@@ -40,7 +39,7 @@ public class AnalogicFilterLv1 extends Filter  {
 	}
 	
 	public void resulstFile() throws IOException {
-	FileWriter fw=new FileWriter("D:\\MPO\\ITESO\\6_semestre\\POO\\programas\\ProyectoPOO\\results.txt");
+	FileWriter fw=new FileWriter("D:\\MPO\\ITESO\\6_semestre\\POO\\programas\\ProyectoPOO\\FilterValuesDesignLv1.txt");
 	BufferedWriter br=new BufferedWriter(fw);
 	br.write(toString());
 	br.close();
@@ -48,16 +47,17 @@ public class AnalogicFilterLv1 extends Filter  {
 	}
 	
 	public String toString() {
-		return String.format("Resistencia Rf=%f\nResistencia R1=%f\nResistencia R=%f",this.Rf, this.R1,this.R);
+		return String.format("Valores introducidos:\n"
+				+ "Frecuencia de corte: %.2f\nCapacitor C1%f:\nGanancia: %.2f\n"
+				+ "Valores caluclados:\nResistencia Rf=%f\nResistencia R=%f\nResistencia R1=%f",getFc(),getCap(),getGain(),this.Rf, this.R,this.R1);
 
 	}
 	
 	public static void main(String[] args) throws NegativeNumberFoundException, IOException {
-		Filter LP= new AnalogicFilterLv1();
+		Filter LP= new AnalogicFilterLv1LP();
 		LP.calculusResistances(LP.getFc(),LP.getGain(),LP.getCap());
 		System.out.println(LP);
 		LP.resulstFile();
-		
 	}
 	
 }

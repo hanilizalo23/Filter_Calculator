@@ -1,0 +1,11 @@
+Valores introducidos:
+Tipo de respuesta del filtro : Chevychev_Crest 1.00db
+Frecuencia de corte: 1500.00
+Capacitor C10.000010:
+Ganancia: 20.00
+Valores caluclados:
+Resistencia R1=24.713221
+Resistencia R2=23.536401
+Resistencia R3=494.264415
+Resistencia R4=47.072801
+Capacitor C2=0.0000001122

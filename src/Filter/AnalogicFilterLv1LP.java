@@ -7,7 +7,7 @@ import java.io.IOException;
 import com.iteso.math.exception.NegativeNumberFoundException;
 
 
-public class AnalogicFilterLv1LP extends Filter  {
+public class AnalogicFilterLv1LP extends AnalagoFilter  {
 	public double R1;
 	public double Rf;
 	public double R;
@@ -48,13 +48,13 @@ public class AnalogicFilterLv1LP extends Filter  {
 	
 	public String toString() {
 		return String.format("Valores introducidos:\n"
-				+ "Frecuencia de corte: %.2f\nCapacitor C1%f:\nGanancia: %.2f\n"
-				+ "Valores caluclados:\nResistencia Rf=%f\nResistencia R=%f\nResistencia R1=%f",getFc(),getCap(),getGain(),this.Rf, this.R,this.R1);
+				+ "Frecuencia de corte: %.2fhz\nCapacitor C1: %f\nGanancia: %.2f\n"
+				+ "Valores calculados:\nResistencia Rf= %fOhms\nResistencia R= %fOhms\nResistencia R1= %fOhms",getFc(),getCap(),getGain(),this.Rf, this.R,this.R1);
 
 	}
 	
 	public static void main(String[] args) throws NegativeNumberFoundException, IOException {
-		Filter LP= new AnalogicFilterLv1LP();
+		AnalagoFilter LP= new AnalogicFilterLv1LP();
 		LP.calculusResistances(LP.getFc(),LP.getGain(),LP.getCap());
 		System.out.println(LP);
 		LP.resulstFile();

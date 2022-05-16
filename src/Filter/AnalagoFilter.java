@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 
 import com.iteso.math.exception.NegativeNumberFoundException;
 
-public abstract class Filter {
+public abstract class AnalagoFilter {
 	protected  double  Fc;
 	protected  double  G;
 	protected  double  C;

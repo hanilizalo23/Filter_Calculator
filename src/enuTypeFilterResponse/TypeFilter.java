@@ -1,7 +1,6 @@
-package Filter;
+package enuTypeFilterResponse;
 
 public enum TypeFilter {
-//	public static final, se crean durante el primer uso de Figura en el programa
 	Chevychev_Cres1db   (0.9564,0.8623),
 	Chevychev_Cres0_5db (0.8638,0.886),
 	Chevychev_Cres0_25db(0.8093,0.9098),

@@ -3,12 +3,11 @@ package Filter;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-
 import javax.swing.JOptionPane;
-
 import com.iteso.math.exception.NegativeNumberFoundException;
+import enuTypeFilterResponse.TypeFilter;
 
-public class AnalogicFilterLv2LP extends Filter {
+public class AnalogicFilterLv2LP extends AnalagoFilter {
 	private double R1;
 	private double R2;
 	private double R3;
@@ -165,18 +164,17 @@ public class AnalogicFilterLv2LP extends Filter {
 	@Override
 	public String toString() {
 		return String.format("Valores introducidos:\n"
-				+ "Tipo de respuesta del filtro : %s\nFrecuencia de corte: %.2f\nCapacitor C1%f:\nGanancia: %.2f\n"
-				+ "Valores caluclados:\nResistencia R1=%f\nResistencia R2=%f\nResistencia R3=%f"
-				+ "\nResistencia R4=%f\nCapacitor C2=%.10f",this.resFiltName,getFc(),getCap(),getGain(),this.R1, this.R2,this.R3,this.R4,this.C2);
+				+ "Tipo de respuesta del filtro : %s\nFrecuencia de corte: %.2fhz\nCapacitor C1: %f\nGanancia: %.2f\n"
+				+ "Valores calculados:\nResistencia R1= %fOhms\nResistencia R2= %fOhms\nResistencia R3= %fOhms"
+				+ "\nResistencia R4=%fOhms\nCapacitor C2=%.10f",this.resFiltName,getFc(),getCap(),getGain(),this.R1, this.R2,this.R3,this.R4,this.C2);
 
 	}
 	
 	
-
 	public static void main(String[] args) throws NegativeNumberFoundException, IOException {
 		TypeFilter type= TypeFilter.Butterworth;
 		System.out.println(type.getQuality());
-		Filter LP= new AnalogicFilterLv2LP();
+		AnalagoFilter LP= new AnalogicFilterLv2LP();
 		LP.calculusResistances(LP.getFc(),LP.getGain(),LP.getCap());
 		System.out.println(LP);
 		LP.resulstFile();

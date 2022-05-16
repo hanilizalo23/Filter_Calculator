@@ -154,7 +154,7 @@ public class AnalogicFilterLv2LP extends AnalagoFilter {
 	
 	@Override
 	public void resulstFile() throws IOException {
-		FileWriter fw=new FileWriter("D:\\MPO\\ITESO\\6_semestre\\POO\\programas\\ProyectoPOO\\FilterValuesDesignLv2.txt");
+		FileWriter fw=new FileWriter("C:\\Users\\nelid\\workspace\\java\\Proyecto_Final\\FilterValuesDesignLv2.txt");
 		BufferedWriter br=new BufferedWriter(fw);
 		br.write(toString());
 		br.close();
